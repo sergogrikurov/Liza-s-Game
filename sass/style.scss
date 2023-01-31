@@ -1,0 +1,278 @@
+@import "nullstyle.scss";
+@import "fonts.scss";
+@import "adaptive-value.scss";
+@import "checkbox.scss";
+@import "modal.scss";
+@import "game.scss";
+
+.main-container {
+	background: url("../img/main-bg.webp") 0 0/100% 100% no-repeat;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100%;
+	text-align: center;
+	max-width: rem(1600);
+	margin: 0 auto;
+}
+.flags {
+	@include adaptive-value("margin-top", 420, 300, 1);
+	display: flex;
+	align-items: center;
+	img {
+		@include adaptive-value("width", 250, 90, 1);
+		@include adaptive-value("height", 200, 90, 1);
+	}
+	& > *:not(:last-child) {
+		margin-right: rem(20);
+	}
+	a {
+		cursor: pointer;
+		border: 5px solid grey;
+		border-radius: rem(5);
+		transform: scale(1);
+		&:hover {
+			transform: scale(1.1);
+			border-color: green;
+		}
+	}
+	@media (max-width: $mobile) {
+		@include adaptive-value("margin-top", 280, 340, 1);
+		flex-direction: column;
+		& > *:not(:last-child) {
+			margin-right: 0;
+			margin-bottom: rem(20);
+		}
+	}
+}
+
+.wrapper {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100%;
+	text-align: center;
+	background: url("../img/bg.jpg") 0 0/100% 100% no-repeat;
+	max-width: rem(1600);
+	margin: 0 auto;
+	position: relative;
+}
+.start-title {
+	margin-top: rem(200);
+}
+
+h1 {
+	color: palevioletred;
+	font-weight: 700;
+	@include adaptive-value("margin-top", 230, 150, 1);
+	@include adaptive-value("font-size", 70, 27, 1);
+}
+.h1-span {
+	height: rem(50);
+	@include adaptive-value("font-size", 50, 28, 1);
+	display: block;
+	color: red;
+	margin-top: rem(20);
+	@include adaptive-value("margin-bottom", 20, 0, 1);
+}
+.h1-span2 {
+	@include adaptive-value("font-size", 50, 24, 1);
+	display: block;
+	color: green;
+	@include adaptive-value("margin-bottom", 35, 10, 1);
+}
+
+//===================================================================//
+
+.input-name-wrapper {
+	display: inline-flex;
+	align-items: center;
+	height: rem(50);
+	@media (max-width: $tablet) {
+		height: fit-content;
+		flex-direction: column;
+	}
+}
+
+#input-name {
+	display: block;
+	height: rem(50);
+	width: rem(250);
+	border: 3px solid blue;
+	border-radius: 5px 0px 0px 5px;
+	color: green;
+	padding: rem(0) rem(15);
+	font-size: rem(25);
+	@media (max-width: $tablet) {
+		@include adaptive-value("width", 250, 160, 1);
+		border: 3px solid blue;
+		border-radius: rem(5);
+		margin-bottom: rem(10);
+		@include adaptive-value("padding-left", 15, 5, 1);
+		@include adaptive-value("padding-right", 15, 5, 1);
+	}
+	&::placeholder {
+		@include adaptive-value("font-size", 18, 14, 1);
+	}
+}
+
+#name-btn {
+	height: rem(50);
+	border: 3px solid blue;
+	border-left: none;
+	@include adaptive-value("font-size", 25, 20, 1);
+	color: blue;
+	border-radius: 0px 5px 5px 0px;
+	padding: rem(5) rem(10);
+	background-color: #fff;
+	&:hover {
+		color: green;
+		border: 3px solid green;
+		border-left: none;
+	}
+	@media (max-width: $tablet) {
+		width: rem(160);
+		border: 3px solid blue;
+		border-radius: rem(5);
+		&:hover {
+			color: green;
+			border: 3px solid green;
+		}
+	}
+}
+.sad-face {
+	max-width: rem(433);
+	max-height: rem(470);
+	margin-top: rem(-20);
+	@include adaptive-value("max-width", 430, 170, 1);
+	@include adaptive-value("max-height", 470, 200, 1);
+	& img {
+		width: 100%;
+	}
+}
+.hide {
+	height: 0;
+	scale: (0);
+	visibility: hidden;
+	transition: all 0.8s ease;
+}
+
+.jer {
+	@include adaptive-value("max-width", 390, 155, 1);
+	margin-top: rem(20);
+	color: red;
+	font-size: rem(25);
+	font-weight: 700;
+}
+
+.bay {
+	margin-top: rem(30);
+	font-size: rem(40);
+	color: red;
+	font-weight: 700;
+}
+
+//===================================================================//
+
+.choose-class {
+	margin-top: rem(-260);
+	&__class-one {
+		color: palevioletred;
+	}
+
+	&__class-two {
+		color: red;
+	}
+
+	&__class-tree {
+		color: yellow;
+	}
+}
+
+.choose-classwrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: rem(-25);
+}
+.class-btn {
+	@include adaptive-value("width", 50, 40, 1);
+	@include adaptive-value("height", 50, 40, 1);
+	border-radius: rem(5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	font-size: rem(30);
+	font-weight: 700;
+	border: 3px solid blue;
+	&:not(:last-child) {
+		@include adaptive-value("margin-right", 20, 15, 1);
+	}
+	&:hover {
+		border: 3px solid green;
+	}
+}
+
+//===================================================================//
+
+h2 {
+	@include adaptive-value("font-size", 50, 40, 1);
+	color: green;
+	margin: rem(200) rem(0) rem(40) rem(0);
+	& span {
+		color: red;
+	}
+	& p {
+		&:nth-child(2) {
+			color: blue;
+		}
+		&:nth-child(4) {
+			color: yellow;
+		}
+	}
+}
+
+.battons {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	@include adaptive-value("max-width", 500, 100, 1);
+	@media (max-width: rem(511)) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: rem(10);
+	}
+}
+
+.main-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 3px solid blue;
+	border-radius: rem(5);
+	width: rem(40);
+	height: rem(40);
+	@include adaptive-value("font-size", 40, 20, 1);
+	@include adaptive-value("padding-left", 20, 10, 1);
+	@include adaptive-value("padding-right", 20, 10, 1);
+	color: blue;
+	&:not(:last-child) {
+		margin-right: rem(10);
+	}
+	@media (max-width: rem(511)) {
+		justify-self: center;
+		&:not(:last-child) {
+			margin-right: 0;
+		}
+	}
+
+	&:hover {
+		border: 3px solid green;
+		color: green;
+	}
+}

@@ -1,0 +1,104 @@
+.container {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100%;
+	text-align: center;
+	background: url("../img/board.jpg") 0 0/100% 100% no-repeat;
+	max-width: rem(1600);
+	margin: 0 auto;
+	color: white;
+	position: relative;
+}
+
+.back-wrapper {
+	@include adaptive-value("margin-top", 40, 20, 1);
+	display: flex;
+	align-items: center;
+	margin-left: rem(50);
+	align-self: flex-start;
+	cursor: pointer;
+
+	& img {
+		width: rem(100);
+		height: rem(50);
+		transform: rotate(180deg);
+	}
+}
+
+//===================================================================//
+
+.empty {
+	margin-bottom: rem(10);
+	text-align: center;
+	font-weight: 700;
+	@include adaptive-value("font-size", 40, 20, 1);
+	@include adaptive-value("width", 430, 200, 1);
+	@include adaptive-value("height", 90, 0, 1);
+	@include adaptive-value("margin-top", 0, 10, 1);
+}
+
+//===================================================================//
+.container > *:nth-child(3) {
+	@include adaptive-value("margin-top", 0, 30, 1);
+	@include adaptive-value("margin-right", 0, 30, 1);
+}
+
+section {
+	display: flex;
+	align-items: center;
+	&:not(:last-child) {
+		@include adaptive-value("margin-bottom", 10, 5, 1);
+	}
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 700;
+	@include adaptive-value("font-size", 80, 40, 1);
+	width: rem(245);
+	font-family: "Dancing Script";
+}
+
+.row input {
+	display: block;
+	font-size: inherit;
+	color: inherit;
+	font-weight: 700;
+	background-color: transparent;
+}
+.row span {
+	display: block;
+	background-color: transparent;
+	height: rem(55);
+	width: rem(20);
+	position: absolute;
+	right: rem(9);
+	top: rem(3);
+}
+.row p {
+	margin-right: rem(10);
+}
+
+.a2 {
+	margin-bottom: rem(5);
+}
+
+.b2 {
+	margin-top: rem(-20);
+}
+.btn {
+	font-size: inherit;
+	background-color: inherit;
+	color: inherit;
+	padding: rem(0) rem(10);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}

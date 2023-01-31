@@ -1,0 +1,64 @@
+.modal.open {
+	opacity: 1;
+	visibility: visible;
+}
+.modal.open .modal__content {
+	transform: perspective(600px) translate(0px, 0px) rotateX(0deg);
+	opacity: 1;
+}
+.modal {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	// Скрываем modal
+	opacity: 0;
+	visibility: hidden;
+	overflow-y: auto;
+	// Для правильного скрола
+	overflow-x: hidden;
+	transition: all 0.8s ease 0s;
+	z-index: 50;
+	&__body {
+		margin-top: rem(100);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 30px 10px;
+	}
+
+	&__content {
+		@include adaptive-value("width", 650, 260, 1);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: url("../img/board.jpg") 0 0/100% 100% no-repeat;
+		padding: 30px;
+		border-radius: 10px;
+		transition: all 0.8s ease 0s;
+		opacity: 0;
+		transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+	}
+
+	&__title {
+		color: white;
+		@include adaptive-value("font-size", 40, 30, 1);
+		margin: 0px 0px 1em 0px;
+		text-align: center;
+		& span {
+			color: palevioletred;
+		}
+	}
+
+	&__text {
+		color: #000;
+	}
+}
+
+.restart-game {
+	@include adaptive-value("font-size", 90, 38, 1);
+	background-color: inherit;
+	color: white;
+}
